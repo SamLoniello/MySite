@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://samloniello.org/</loc>
+    <loc>http://localhost/about.html</loc>
     <lastmod>2024-11-02</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://samloniello.org/about</loc>
-    <lastmod>2024-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://samloniello.org/poems</loc>
+    <loc>http://localhost/poems.html</loc>
     <lastmod>2024-11-02</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://samloniello.org/blog</loc>
+    <loc>http://localhost/blog.html</loc>
     <lastmod>2024-11-02</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://samloniello.org/projects</loc>
+    <loc>http://localhost/projects.html</loc>
     <lastmod>2024-11-02</lastmod>
     <changefreq>monthly</changefreq>
   </url>
+  
+  
+  <url>
+    <loc>http://localhost/poems.html</loc>
+    <lastmod>2024-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  
 </urlset>

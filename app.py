@@ -28,27 +28,27 @@ class Poem(db.Model):
 
 # Routes
 @app.route('/')
-@app.route('/about')
+@app.route('/about.html')  # Updated
 def about():
     last_login_time = session.get('last_login_time', 'Never')
     return render_template('about.html', last_login_time=last_login_time)
 
-@app.route('/poems')
+@app.route('/poems.html')  # Updated
 def poems_page():
     poems = Poem.query.all()
     return render_template('poems.html', poems=poems)
 
-@app.route('/blog')
+@app.route('/blog.html')  # Updated
 def blog():
     posts = Post.query.all()
     return render_template('blog.html', posts=posts)
 
-@app.route('/projects')
+@app.route('/projects.html')  # Updated
 def projects():
     return render_template('projects.html')
 
 # Login Route
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login.html', methods=['GET', 'POST'])  # Updated
 def login():
     if request.method == 'POST':
         password = request.form['password']
@@ -62,14 +62,14 @@ def login():
     return render_template('login.html')
 
 # Logout Route
-@app.route('/logout', methods=['GET', 'POST'])
+@app.route('/logout.html', methods=['GET', 'POST'])  # Updated
 def logout():
     session.pop('logged_in', None)
     flash('Logged out successfully!', 'info')
     return redirect(url_for('login'))
 
-# Admin Route to Add Content
-@app.route('/admin', methods=['GET', 'POST'])
+# Admin Route
+@app.route('/admin.html', methods=['GET', 'POST'])  # Updated
 def admin():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
@@ -89,10 +89,10 @@ def admin():
         flash('Content added successfully!', 'success')
         return redirect(url_for('admin'))
 
-    # Pass posts and poems to admin template
     posts = Post.query.all()
     poems = Poem.query.all()
     return render_template('admin.html', posts=posts, poems=poems)
+
 
 # Delete routes
 @app.route('/delete_post/<int:post_id>', methods=['POST'])
