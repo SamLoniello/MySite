@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ url_for('about', _external=True) }}</loc>
+    <lastmod>{{ '2024-11-02' }}</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>{{ url_for('poems_page', _external=True) }}</loc>
+    <lastmod>{{ '2024-11-02' }}</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>{{ url_for('blog', _external=True) }}</loc>
+    <lastmod>{{ '2024-11-02' }}</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>{{ url_for('projects', _external=True) }}</loc>
+    <lastmod>{{ '2024-11-02' }}</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  {% for post in posts %}
+  <url>
+    <loc>{{ url_for('blog', _external=True) }}</loc>
+    <lastmod>{{ post.lastmod.date().isoformat() }}</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  {% endfor %}
+  {% for poem in poems %}
+  <url>
+    <loc>{{ url_for('poems_page', _external=True) }}</loc>
+    <lastmod>{{ poem.lastmod.date().isoformat() }}</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  {% endfor %}
+</urlset>

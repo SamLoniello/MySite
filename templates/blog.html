@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+<h1>Blog Posts</h1>
+{% for post in posts %}
+    <div class="blog-box">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content | safe }}</p>
+        {% if session.get('logged_in') %}
+            <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        {% endif %}
+    </div>
+{% else %}
+    <p>No blog posts available.</p>
+{% endfor %}
+{% endblock %}

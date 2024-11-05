@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to My Blog</h1>
+    {% for post in posts %}
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

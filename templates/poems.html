@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Poems{% endblock %}
+
+{% block content %}
+
+<div class="poems-container">
+    {% for poem in poems %}
+        <div class="poem-box">
+            <h3>{{ poem.title }}</h3>
+            <p>{{ poem.content | safe }}</p>
+            {% if session.get('logged_in') %}
+                <form action="{{ url_for('delete_poem', poem_id=poem.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="about-section">
+    <!-- Welcome Section -->
+    <h1>Welcome to My Website</h1>
+    <p class="about-paragraph">
+        The primary goal of this site is to develop my skills in Python, HTML, CSS, JavaScript, and more! Learn by doing,
+        plus get my thoughts out there.
+    </p>
+    <p class="about-paragraph">
+        My hope is that anyone who finds this site enjoys the content and perhaps even finds some inspiration!
+    </p>
+
+    <!-- Goals Section -->
+    <h2 class="about-heading">Site Goals</h2>
+    <ul class="goals-list">
+        <li>Establish a functional and visually appealing Poems page.</li>
+        <li>Create an interactive Blog/Forum page for discussions.</li>
+        <li>Develop a Contributions section for visitors to share thoughts/feedback.</li>
+        <li>Showcase various coding, small engine, and craft projects, along with ongoing learning progress.</li>
+        <li>Continuously refine the site as my skills improve or decline!</li>
+    </ul>
+<p>
+    
+</p>
+    <!-- Last Updated Section -->
+    <h2 class="about-heading">Last Updated</h2>
+    <p class="about-paragraph">
+        Last admin login: {{ last_login_time }}
+    </p>
+
+    <!-- Feedback Section -->
+    <h2 class="about-heading">Feedback</h2>
+    <p class="about-paragraph">
+        Any suggestions or assistance with this site are highly welcomed and appreciated!
+    </p>
+</div>
+{% endblock %}
